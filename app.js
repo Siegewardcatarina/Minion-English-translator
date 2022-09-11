@@ -1,11 +1,7 @@
-// var btns = document.querySelectorAll(".bttn");
-// for(let btn of btns) {
-//     btn.addEventListener("click",function click(){
-//         console.log("clicked");
-//     })
-// }
-
-const bodyParent = document.querySelector("#bodyParent")
-bodyParent.addEventListener("click",function click(){
+var btn = document.querySelector(".btn-primary");
+var txt = document.querySelector('#txt-input');
+console.log(txt);
+btn.addEventListener("click",function click(){
     console.log("clicked");
+    console.log('input',txt.value);
 })
