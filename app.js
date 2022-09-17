@@ -2,7 +2,8 @@ var btn = document.querySelector("#btn-primary");
 var txt = document.querySelector("#txt-input");
 var out = document.querySelector("#output");
 
-var serverurl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+// var serverurl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+var serverurl ="https://api.funtranslations.com/translate/minion.json"
 
 function geturl(text)
 {
@@ -19,7 +20,10 @@ function clickeventhandler(){
     var inputtxt = txt.value;
     fetch(geturl(inputtxt))
         .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(errorhandler)
+        .then(json => {
+            var translatedtxt=json.contents.translated;
+            out.innerText = translatedtxt;
+        })  
+    .catch(errorhandler) 
 }
 btn.addEventListener("click",clickeventhandler);
