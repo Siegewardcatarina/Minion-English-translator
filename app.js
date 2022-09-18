@@ -5,13 +5,11 @@ var out = document.querySelector("#output");
 // var serverurl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 var serverurl ="https://api.funtranslations.com/translate/minion.json"
 
-function geturl(text)
-{
+function geturl(text){
     return serverurl + '?' + 'text=' + text;
 }
 
-function errorhandler()
-{
+function errorhandler(){
     console.log("An error occured, please try again in a while");
     alert("An error occured, please try again in a while");
 }
@@ -23,7 +21,6 @@ function clickeventhandler(){
         .then(json => {
             var translatedtxt=json.contents.translated;
             out.innerText = translatedtxt;
-        })  
-    .catch(errorhandler) 
+        }).catch(errorhandler) 
 }
 btn.addEventListener("click",clickeventhandler);
